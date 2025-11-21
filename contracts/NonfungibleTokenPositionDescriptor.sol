@@ -16,11 +16,11 @@ import './libraries/TokenRatioSortOrder.sol';
 /// @title Describes NFT token positions
 /// @notice Produces a string containing the data URI for a JSON metadata string
 contract NonfungibleTokenPositionDescriptor is INonfungibleTokenPositionDescriptor {
-    address private constant DAI = 0x6B175474E89094C44Da98b954EedeAC495271d0F;
+    /*address private constant DAI = 0x6B175474E89094C44Da98b954EedeAC495271d0F;
     address private constant USDC = 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48;
     address private constant USDT = 0xdAC17F958D2ee523a2206206994597C13D831ec7;
     address private constant TBTC = 0x8dAEBADE922dF735c38C80C7eBD708Af50815fAa;
-    address private constant WBTC = 0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599;
+    address private constant WBTC = 0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599;*/
 
     address public immutable WETH9;
     /// @dev A null-terminated string
@@ -105,7 +105,8 @@ contract NonfungibleTokenPositionDescriptor is INonfungibleTokenPositionDescript
             return TokenRatioSortOrder.DENOMINATOR;
         }
         if (chainId == 1) {
-            if (token == USDC) {
+            return 0;
+           /* if (token == USDC) {
                 return TokenRatioSortOrder.NUMERATOR_MOST;
             } else if (token == USDT) {
                 return TokenRatioSortOrder.NUMERATOR_MORE;
@@ -117,7 +118,7 @@ contract NonfungibleTokenPositionDescriptor is INonfungibleTokenPositionDescript
                 return TokenRatioSortOrder.DENOMINATOR_MOST;
             } else {
                 return 0;
-            }
+            }*/
         }
         return 0;
     }
