@@ -37,7 +37,7 @@ abstract contract ERC721Permit is BlockTimestamp, ERC721, IERC721Permit {
             keccak256(
                 abi.encode(
                     // keccak256('EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)')
-                    0x8b73c3c69bb8fe3d512ecc4cf759cc79239f7b179b0ffacaa9a75d522b39400f,
+                    bytes32(0x8B73c3C69bb8FE3d512EcC4cf759cC79239f7B179b0FFAcaA9A75d522B39400f),
                     nameHash,
                     versionHash,
                     ChainId.get(),
@@ -49,7 +49,7 @@ abstract contract ERC721Permit is BlockTimestamp, ERC721, IERC721Permit {
     /// @inheritdoc IERC721Permit
     /// @dev Value is equal to keccak256("Permit(address spender,uint256 tokenId,uint256 nonce,uint256 deadline)");
     bytes32 public constant override PERMIT_TYPEHASH =
-        0x49ecf333e5b8c95c40fdafc95c1ad136e8914a8fb55e9dc8bb01eaa83a2df9ad;
+        bytes32(0x49EcF333e5b8C95c40FDAfc95c1Ad136e8914A8fb55E9Dc8BB01EaA83A2dF9aD);
 
     /// @inheritdoc IERC721Permit
     function permit(
