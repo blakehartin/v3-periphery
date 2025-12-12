@@ -31,7 +31,7 @@ library PoolAddress {
     /// @param key The PoolKey
     /// @return pool The contract address of the V3 pool
     function computeAddress(address factory, PoolKey memory key) internal view returns (address pool) {
-        require(key.token0 < key.token1);
+        require(key.token0 < key.token1, 'computeAddress error');
         IUniswapV3Factory fact = IUniswapV3Factory(factory);
         pool = fact.getPool(key.token0, key.token1, key.fee);
     }
