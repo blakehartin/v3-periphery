@@ -187,7 +187,7 @@ contract NonfungiblePositionManager is
     }
 
     function tokenURI(uint256 tokenId) public view override(ERC721, IERC721Metadata) returns (string memory) {
-        require(_exists(tokenId), 'tokenId doesn't exist);
+        require(_exists(tokenId), 'tokenId doesnt exist');
         return INonfungibleTokenPositionDescriptor(_tokenDescriptor).tokenURI(this, tokenId);
     }
 
